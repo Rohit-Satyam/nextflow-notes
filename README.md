@@ -27,6 +27,7 @@ process BWAINDEX{
 	cp $fasta bwaidx/
 	bwa index bwaidx/$fasta
 	samtools faidx bwaidx/$fasta
+	gatk CreateSequenceDictionary -R bwaidx/$fasta
 	"""
 }
 
